@@ -28,7 +28,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                <state key="normal" title="🏀"/>
                                 <connections>
                                     <action selector="buttonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nax-l5-8ml"/>
                                 </connections>
@@ -38,7 +37,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                <state key="normal" title="🏀"/>
                                 <connections>
                                     <action selector="buttonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3tf-Jb-BS2"/>
                                 </connections>
@@ -48,7 +46,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                <state key="normal" title="🏀"/>
                                 <connections>
                                     <action selector="buttonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="o5O-HI-f3W"/>
                                 </connections>
@@ -58,7 +55,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                <state key="normal" title="🏀"/>
                                 <connections>
                                     <action selector="buttonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0sz-Sf-khy"/>
                                 </connections>
@@ -69,11 +65,10 @@
                     </view>
                     <connections>
                         <outlet property="touchLabel" destination="mVw-i3-U1S" id="6MM-u6-DNE"/>
-                        <outletCollection property="buttonCollection" destination="1wK-mQ-mxd" collectionClass="NSMutableArray" id="Fyq-tE-AaE"/>
-                        <outletCollection property="buttonCollection" destination="xaO-lw-dy8" collectionClass="NSMutableArray" id="8qF-aU-haC"/>
-                        <outletCollection property="buttonCollection" destination="1wK-mQ-mxd" collectionClass="NSMutableArray" id="Chk-s7-2n2"/>
-                        <outletCollection property="buttonCollection" destination="DnP-mJ-jiV" collectionClass="NSMutableArray" id="9US-Tq-iUH"/>
-                        <outletCollection property="buttonCollection" destination="O4O-aT-ejz" collectionClass="NSMutableArray" id="8KV-Rr-XMe"/>
+                        <outletCollection property="buttonCollection" destination="1wK-mQ-mxd" collectionClass="NSMutableArray" id="Y3Q-LE-ZEf"/>
+                        <outletCollection property="buttonCollection" destination="xaO-lw-dy8" collectionClass="NSMutableArray" id="mf0-tL-HNg"/>
+                        <outletCollection property="buttonCollection" destination="DnP-mJ-jiV" collectionClass="NSMutableArray" id="n3L-in-wEi"/>
+                        <outletCollection property="buttonCollection" destination="O4O-aT-ejz" collectionClass="NSMutableArray" id="3JI-bx-RXe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
