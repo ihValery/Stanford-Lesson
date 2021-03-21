@@ -1,19 +1,17 @@
-//
-//  ViewController.swift
-//  Concentration
-//
-//  Created by Валерий Игнатьев on 21.03.2021.
-//
-
 import UIKit
 
-class ViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+class ViewController: UIViewController
+{
+    var touches = 0
+    
+    @IBOutlet weak var touchLabel: UILabel!
+    @IBOutlet var buttonCollection: [UIButton]!
+    
+    @IBAction func buttonAction(_ sender: UIButton)
+    {
+        touches += 1
+        touchLabel.text = "Touches: \(touches)"
     }
-
-
+    
+    
 }
-
