@@ -1,13 +1,34 @@
 import Foundation
 
-class ConcentrationGame
-{
-    var cards = [Card]()
+class ConcentrationGame {
     
-    var indexOfOneAndOnlyFaceUpCard: Int?
+    private(set) var cards = [Card]()
     
-    func chooseCard(at index: Int)
-    {
+    private var indexOfOneAndOnlyFaceUpCard: Int? {
+        //Смотрим на все карты и и проверяем если одна единственная карточка
+        get {
+            var foundIndex: Int?
+            for i in cards.indices {
+                if cards[i].isFaceUp {
+                    if foundIndex == nil {
+                        foundIndex = i
+                    } else {
+                        return nil
+                    }
+                }
+            }
+            return foundIndex
+        }
+        //Переворачиваем все карти лицом вниз кроме одной с индексом newValue
+        set {
+            for i in cards.indices {
+                cards[i].isFaceUp = (i == newValue)
+            }
+        }
+    }
+    
+    func chooseCard(at index: Int) {
+        
         if !cards[index].isMathces {
             if let matchingIndex = indexOfOneAndOnlyFaceUpCard, matchingIndex != index {
                 if cards[matchingIndex].indetifire == cards[index].indetifire {
@@ -15,24 +36,20 @@ class ConcentrationGame
                     cards[index].isMathces = true
                 }
                 cards[index].isFaceUp = true
-                indexOfOneAndOnlyFaceUpCard = nil
             } else {
-                for flipDown in cards.indices {
-                    cards[flipDown].isFaceUp = false
-                }
-                cards[index].isFaceUp = true
                 indexOfOneAndOnlyFaceUpCard = index
             }
         }
     }
     
-    init(numderOfPairsOfCards: Int)
-    {
+    //Инициализатор который заполняет массив карточек
+    init(numderOfPairsOfCards: Int) {
+        
+        assert(numderOfPairsOfCards > 0, "Парных карт не должно быть меньше нуля")
         for _ in 1...numderOfPairsOfCards {
             let card = Card()
             cards += [card, card]
         }
         cards.shuffle()
-        //TODO: Shuffle the card
     }
 }
