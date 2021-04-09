@@ -10,7 +10,7 @@ class ViewController: UIViewController {
     
     private(set) var touches = 0 {
         didSet {
-            touchLabel.text = "Touches: \(touches)"
+            updateTouchLabel()
         }
     }
     
@@ -20,7 +20,11 @@ class ViewController: UIViewController {
     
     private var emojiDictionary = [Card:String]()
     
-    @IBOutlet private weak var touchLabel: UILabel!
+    @IBOutlet private weak var touchLabel: UILabel! {
+        didSet {
+            updateTouchLabel()
+        }
+    }
     @IBOutlet private var buttonCollection: [UIButton]!
     
     @IBAction private func buttonAction(_ sender: UIButton) {
@@ -54,6 +58,15 @@ class ViewController: UIViewController {
                 button.backgroundColor = card.isMathces ? #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0) : #colorLiteral(red: 0, green: 0.3231856227, blue: 0.5848054886, alpha: 1)
             }
         }
+    }
+    
+    private func updateTouchLabel() {
+        let attributes: [NSAttributedString.Key : Any] = [
+            .strokeWidth: 5.0,
+            .strokeColor: UIColor.red
+        ]
+        let attributedString = NSAttributedString(string: "Touches: \(touches)", attributes: attributes)
+        touchLabel.attributedText = attributedString
     }
 }
 
