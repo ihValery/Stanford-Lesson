@@ -7,6 +7,11 @@ struct ConcentrationGame {
     private var indexOfOneAndOnlyFaceUpCard: Int? {
         //Смотрим на все карты и и проверяем если одна единственная карточка
         get {
+            
+            return cards.indices.filter { cards[$0].isFaceUp }.oneAndOnly
+            
+//            return faceUpCardIndices.count == 1 ? faceUpCardIndices.first : nil
+/*
             var foundIndex: Int?
             for i in cards.indices {
                 if cards[i].isFaceUp {
@@ -18,6 +23,7 @@ struct ConcentrationGame {
                 }
             }
             return foundIndex
+ */
         }
         //Переворачиваем все карти лицом вниз кроме одной с индексом newValue
         set {
@@ -25,6 +31,7 @@ struct ConcentrationGame {
                 cards[i].isFaceUp = (i == newValue)
             }
         }
+
     }
     
     mutating func chooseCard(at index: Int) {
@@ -51,5 +58,12 @@ struct ConcentrationGame {
             cards += [card, card]
         }
         cards.shuffle()
+    }
+}
+
+extension Collection {
+    
+    var oneAndOnly: Element? {
+        return count == 1 ? first : nil
     }
 }
