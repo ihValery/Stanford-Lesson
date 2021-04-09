@@ -33,6 +33,7 @@ class ViewController: UIViewController {
             game.chooseCard(at: buttonIndex)
             updateViewFromModel()
         }
+        //TODO: Сделать что бы считало только по перевоннутым карточкам
         touches += 1
     }
     
