@@ -14,7 +14,9 @@ class ViewController: UIViewController {
         }
     }
     
-    private var emojiCollection = ["🦄", "🦋", "🐣", "🐠", "🐳", "🕊", "🦩", "🦒", "🦎", "🐇", "🐬", "🐢",]
+//    private var emojiCollection = ["🦄", "🦋", "🐣", "🐠", "🐳", "🕊", "🦩", "🦒", "🦎", "🐇", "🐬", "🐢",]
+    
+    private var emojiCollection = "🦄🦋🐣🐠🐳🕊🦩🦒🦎🐇🐬🐢"
     
     private var emojiDictionary = [Card:String]()
     
@@ -33,7 +35,8 @@ class ViewController: UIViewController {
     private func emojiIdentifier(for card: Card) -> String {
         
         if emojiDictionary[card] == nil {
-            emojiDictionary[card] = emojiCollection.remove(at: emojiCollection.count.randomIndexEmoji)
+            let randomStringIndex = emojiCollection.index(emojiCollection.startIndex, offsetBy: emojiCollection.count.randomIndexEmoji)
+            emojiDictionary[card] = String(emojiCollection.remove(at: randomStringIndex))
         }
         return emojiDictionary[card] ?? "?"
     }
@@ -58,11 +61,20 @@ extension Int {
     
     var randomIndexEmoji: Int {
         if self > 0 {
-            return Int.random(in: 0..<self)
+            return Int(arc4random_uniform(UInt32(self)))
         } else if self < 0 {
-            return Int.random(in: 0..<abs(self))
+            return -Int(arc4random_uniform(UInt32(abs(self))))
         } else {
             return 0
         }
     }
+//    var randomIndexEmoji: Int {
+//        if self > 0 {
+//            return Int.random(in: 0..<self)
+//        } else if self < 0 {
+//            return -Int.random(in: 0..<abs(self))
+//        } else {
+//            return 0
+//        }
+//    }
 }
