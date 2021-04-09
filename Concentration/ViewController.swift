@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     
     private var emojiCollection = ["🦄", "🦋", "🐣", "🐠", "🐳", "🕊", "🦩", "🦒", "🦎", "🐇", "🐬", "🐢",]
     
-    private var emojiDictionary = [Int:String]()
+    private var emojiDictionary = [Card:String]()
     
     @IBOutlet private weak var touchLabel: UILabel!
     @IBOutlet private var buttonCollection: [UIButton]!
@@ -32,10 +32,10 @@ class ViewController: UIViewController {
     
     private func emojiIdentifier(for card: Card) -> String {
         
-        if emojiDictionary[card.indetifire] == nil {
-            emojiDictionary[card.indetifire] = emojiCollection.remove(at: emojiCollection.count.randomIndexEmoji)
+        if emojiDictionary[card] == nil {
+            emojiDictionary[card] = emojiCollection.remove(at: emojiCollection.count.randomIndexEmoji)
         }
-        return emojiDictionary[card.indetifire] ?? "?"
+        return emojiDictionary[card] ?? "?"
     }
     
     private func updateViewFromModel() {
@@ -60,7 +60,7 @@ extension Int {
         if self > 0 {
             return Int.random(in: 0..<self)
         } else if self < 0 {
-            return -Int.random(in: 0..<abs(self))
+            return Int.random(in: 0..<abs(self))
         } else {
             return 0
         }

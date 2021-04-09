@@ -1,10 +1,10 @@
 import Foundation
 
-struct Card {
+struct Card: Hashable {
     
     var isFaceUp = false
     var isMathces =  false
-    var indetifire: Int
+    private var indetifire: Int
     
     private static var identifierNumber = 0
     
@@ -17,5 +17,13 @@ struct Card {
     //Сам инициализатор генерирует indetifire
     init() {
         self.indetifire = Card.identifierGenerator()
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(indetifire)
+    }
+    
+    static func ==(lhs: Card, rhs: Card) -> Bool {
+        return lhs.indetifire == rhs.indetifire
     }
 }
