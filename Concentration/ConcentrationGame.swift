@@ -1,6 +1,6 @@
 import Foundation
 
-class ConcentrationGame {
+struct ConcentrationGame {
     
     private(set) var cards = [Card]()
     
@@ -27,11 +27,11 @@ class ConcentrationGame {
         }
     }
     
-    func chooseCard(at index: Int) {
+    mutating func chooseCard(at index: Int) {
         
         if !cards[index].isMathces {
             if let matchingIndex = indexOfOneAndOnlyFaceUpCard, matchingIndex != index {
-                if cards[matchingIndex].indetifire == cards[index].indetifire {
+                if cards[matchingIndex] == cards[index] {
                     cards[matchingIndex].isMathces = true
                     cards[index].isMathces = true
                 }
