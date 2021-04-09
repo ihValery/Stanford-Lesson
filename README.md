@@ -39,3 +39,10 @@
        Использование протоколов для обязательного поведения
        Протокол Hashable на примере (обязательность поведения)
        Множественное наследование
+ - Урок 7 String, NSAttributedString. Объяснение 4-й Стэнфордской лекции.
+       –	(String)
+       String (теория) 
+       String (в коде) 
+       –	(NSAttributedString)
+       NSAttributedString (теория) NextStep
+       NSAttributedString (в коде)
